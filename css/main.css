@@ -240,7 +240,7 @@ img{
     background: linear-gradient(154deg,#c9e6dc 0%, #9dc7d9 40%, #9dc7d9 30%, #d6c2d0 80%);
     background: -webkit-linear-gradient(154deg,#c9e6dc 0%, #9dc7d9 40%, #9dc7d9 30%, #d6c2d0 80%);
     background: -moz-linear-gradient(154deg,#c9e6dc 0%, #9dc7d9 40%, #9dc7d9 30%, #d6c2d0 80%);
-    padding-top: 30px;
+    padding-top: 60px;
     padding-bottom: 30px;
     /* background-image: url("./../images/hero-back.jpeg"); */
     /* background-repeat: no-repeat;
@@ -250,7 +250,7 @@ img{
 .hero{
     /* width: 90%; */
     margin: 0 auto;
-    min-height: 370px;
+    /* min-height: 370px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -266,8 +266,8 @@ img{
     box-sizing: unset;
 }
 .hero__content-title {
-    max-width: 320px;
-    font-size: 45px;
+    max-width: 520px;
+    font-size: 75px;
     font-family: 'Lexend Deca', sans-serif;
     color: var(--color-bg);
 }
@@ -299,6 +299,18 @@ img{
     border-radius: 50%;
     width: 300px;
     height: 300px;
+}
+.hero__img::before{
+    content: "";
+    /* background-color: chocolate; */
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    background-image: url("./../images/hero-back.jpeg");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: right center;
 }
 .hero-img1{
     display: none;
@@ -335,8 +347,8 @@ img{
 /* Tablet */
 @media only screen and (max-width: 900px) {
     .hero__content-title{
-        max-width: 300px;
-        font-size: 35px;
+        max-width: 400px;
+        font-size: 55px;
     }
     .hero__content-text{
         font-size: 15px;
@@ -356,4 +368,339 @@ img{
     }
 }
 
+
+
+
+
+/* this is about part  */
+.about {
+    margin: 0 auto;
+    width: 80%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 100px;
+    margin-top: 100px;
+    border-top: 1px solid var(--color-bg);
+}
+.about-title {
+    font-size: 55px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--color-bg);
+    text-align: center;
+}
+.about-text {
+    font-size: 24px;
+    text-transform: capitalize;
+    font-family: "Montserrat", serif;
+    text-align: center;
+    text-decoration: line-through;
+}
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.about-content__inner {
+    max-width: 60%;
+    margin-right: 20px;
+    margin: 0 auto;
+}
+.about-content__inner-title {
+    font-size: 27px;
+    color: var(--color-primary);
+    font-family: "Lexend Deca";
+}
+.about-content__inner-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--color-bg2);
+    font-family: "montserrat";
+    font-weight: 400;
+}
+
+.about-content__inner-btn {
+    max-width: 300px;
+    background: var(--color-primary);
+    color: var(--color-light);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+    display: block;
+    border: 2px solid transparent;
+    text-align: center;
+}
+.about-content__inner-btn:hover{
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.about-content__img {
+    width: 400px;
+    height: 300px;
+    border: 3px double #ccc;
+    background-image: url("./../images/pexels-lukas-296301.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.image2{
+    margin-top: 45px;
+}
+.image1{
+    display: none;
+}
+/* Tablet */
+@media only screen and (max-width: 900px) {
+    .about{
+        width: 90%;
+    }
+    .about-content{
+        justify-content: center;
+    }
+    .about-content__inner{
+        max-width: 90%;
+        /* min-width: 600px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .image2{
+        display: none;
+    }
+    .image1{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .about-content__inner-btn{
+        width: 40%;
+        min-width: 200px;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 450px) {
+    .about{
+        width: 98%;
+    }
+    .image1{
+        width: 300px;
+        height: 250px;
+    }
+}
+
+
+
+
+/* this is Cards part  */
+:root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
+}
+#cards {
+    margin: 0 auto;
+    width: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 100px;
+    margin-top: 100px;
+    border-top: 1px solid var(--color-bg);
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+}
+.card h2{
+    font-size: 35px;
+    color: var(--color-primary);
+    font-family: "Montserrat";
+}
+.card p{
+    font-size: 17px;
+    color: var(--color-bg2);
+    font-family: "Lexend Deca";
+}
+.card a{
+
+    max-width: 300px;
+    background: var(--color-primary);
+    color: var(--color-light);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+    display: block;
+    border: 2px solid transparent;
+    text-align: center;
+}
+.card a:hover{
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+
+#card_4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+@supports (animation-timeline: works) {
+
+	@scroll-timeline cards-element-scrolls-in-body {
+		source: selector(body);
+		scroll-offsets:
+			/* Start when the start edge touches the top of the scrollport */
+			selector(#cards) start 1,
+			/* End when the start edge touches the start of the scrollport */
+			selector(#cards) start 0
+		;
+		start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+		end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+		time-range: 4s;
+	}
+
+	.card {
+		--index0: calc(var(--index) - 1); /* 0-based index */
+		--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+		--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+	}
+	
+	.card__content {
+		transform-origin: 50% 0%;
+		will-change: transform;
+
+		--duration: calc(var(--reverse-index0) * 1s);
+		--delay: calc(var(--index0) * 1s);
+
+		animation: var(--duration) linear scale var(--delay) forwards;
+		animation-timeline: cards-element-scrolls-in-body;
+	}
+
+	@keyframes scale {
+		to {
+			transform:
+				scale(calc(
+					1.1
+					-
+					calc(0.1 * var(--reverse-index))
+				));
+		}
+	}
+}
+
+/** DEBUG **/
+
+#debug {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+#debug::after {
+  content: " Show Debug";
+  margin-left: 1.5em;
+  color: white;
+  white-space: nowrap;
+}
+
+#debug:checked ~ main {
+  --outline-width: 1px;
+}
+
+
+/** PAGE STYLING **/
+
+#cards {
+	list-style: none;
+	outline: calc(var(--outline-width) * 10) solid blue;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--numcards), var(--card-height));
+	gap: var(--card-margin);
+}
+
+.card {
+	outline: var(--outline-width) solid hotpink;
+}
+
+.card__content {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	background: rgb(255, 255, 255);
+	color: rgb(10, 5, 7);
+	border-radius: 1em;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+
+	align-items: stretch;
+	outline: var(--outline-width) solid lime;
+}
+
+.card__content > div {
+	grid-area: text;
+	width: 80%;
+	place-self: center;
+	text-align: left;
+
+	display: grid;
+	gap: 1em;
+	place-items: start;
+}
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}
+
+.card__content > figure > img {
+	width: 100%;
+	height: 600px;
+	object-fit: cover;
+}
+
+/* h1 {
+	font-weight: 300;
+	font-size: 3.5em;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 2.5em;
+}
+
+p {
+	font-family: sans-serif;
+	font-weight: 300;
+	line-height: 1.42;
+}
+
+.btn {
+	background: rgb(188 87 36);
+	color: rgb(255 255 255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 0.25em;
+} */
 
